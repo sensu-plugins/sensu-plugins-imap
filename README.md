@@ -1,6 +1,6 @@
 ## Sensu-Plugins-imap
 
-[![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-imap.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-imap)
+[ ![Build Status](https://travis-ci.org/sensu-plugins/sensu-plugins-imap.svg?branch=master)](https://travis-ci.org/sensu-plugins/sensu-plugins-imap)
 [![Gem Version](https://badge.fury.io/rb/sensu-plugins-imap.svg)](http://badge.fury.io/rb/sensu-plugins-imap)
 [![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-imap/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-imap)
 [![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-imap/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-imap)
