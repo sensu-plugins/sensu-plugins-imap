@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.cert_chain             = ['certs/sensu-plugins.pem']
   s.date                   = Date.today.to_s
   s.description            = 'This plugin provides native IMAP instrumentation
-                              for monitoring of service connectivity'
+                              for monitoring of service connectivity.'
   s.email                  = '<sensu-users@googlegroups.com>'
   s.executables            = Dir.glob('bin/**/*.rb').map { |file| File.basename(file) }
   s.files                  = Dir.glob('{bin,lib}/**/*') + %w(LICENSE README.md CHANGELOG.md)
