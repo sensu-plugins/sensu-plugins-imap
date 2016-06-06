@@ -36,19 +36,27 @@ require 'timeout'
 
 class CheckIMAP < Sensu::Plugin::Check::CLI
   option :host,
+         description: 'IMAP host',
          short: '-h host',
+         long: '--host host',
          default: '127.0.0.1'
 
   option :mech,
+         description: 'IMAP authentication mechanism',
          short: '-m mech',
+         long: '--mechanism mech',
          default: 'plain'
 
   option :user,
+         description: 'IMAP username',
          short: '-u user',
+         long: '--user user',
          default: 'test'
 
   option :pass,
+         description: 'IMAP user password',
          short: '-p pass',
+         long: '--password pass',
          default: 'yoda'
 
   def run
