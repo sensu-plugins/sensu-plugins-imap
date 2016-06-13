@@ -18,6 +18,7 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ### Changed
 - change default call to check via TLS on port 993
+- upgrade RuboCop to 0.40, clean up code accordingly
 
 ## [0.0.2] - 2015-07-14
 ### Changed
