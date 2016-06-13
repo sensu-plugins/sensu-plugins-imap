@@ -59,10 +59,35 @@ class CheckIMAP < Sensu::Plugin::Check::CLI
          long: '--password pass',
          default: 'yoda'
 
+  option :port,
+         description: 'Server port',
+         long: '--port port',
+         default: '993'
+
+  option :disable_tls,
+         description: 'Forces plain text connection instead of using TLS',
+         long: '--disable-tls'
+
   def run
     Timeout.timeout(15) do
-      imap = Net::IMAP.new(config[:host].to_s)
-      status = imap.authenticate(config[:mech].to_s, config[:user].to_s, config[:pass].to_s)
+      imap = if config[:disable_tls] && config[:port].to_i != 993
+               # TLS is disabled and port is given
+               Net::IMAP.new(config[:host].to_s, config[:port].to_i)
+
+             elsif config[:disable_tls]
+               # TLS is disabled, so default to port from Ruby's net/imap
+               Net::IMAP.new(config[:host].to_s)
+
+             else
+               # Default: Connect using TLS based encryption
+               Net::IMAP.new(config[:host].to_s,
+                             config[:port].to_i,
+                             true)
+             end
+
+      status = imap.authenticate(config[:mech].to_s,
+                                 config[:user].to_s,
+                                 config[:pass].to_s)
       unless status.nil?
         ok 'IMAP SERVICE WORKS FINE'
         imap.disconnect
