@@ -12,6 +12,8 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ### Changed
 - change default call to check via TLS on port 993
+- removed support for Ruby < 2.0.0
+
 
 ## [0.0.2] - 2015-07-14
 ### Changed
